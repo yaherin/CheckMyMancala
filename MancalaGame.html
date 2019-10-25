@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        button{
+            width:50vmin;
+            height:25vmin;
+            color:lavender;
+            text-align:center;
+            background-color:mediumslateblue;
+            border-color:violet;
+             border-width:3vmin;
+            font-size:5vmin;
+            border-style:solid;
+            font-weight:bold;
+        }
+        button:hover{
+            background-color:mediumorchid;
+        }
+
+        .modal {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1.1);
+        transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+        overflow-y:auto;
+        z-index:1000;
+    }
+    .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 1rem 1.5rem;
+        width: 24rem;
+        border-radius: 0.5rem;
+    }
+    .close-button {
+        float: right;
+        width: 1.5rem;
+        line-height: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        background-color: lightgray;
+    }
+    .close-button:hover {
+        background-color: darkgray;
+    }
+    .show-modal {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1.0);
+        transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    }
+	
+    </style>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="mancstyle.css">
+</head>
+<body>
+
+    <h1 style="background-color:mediumslateblue; color:lavender; text-align:center">
+
+        Mancala
+        <a href="index.html">
+            <img src="img/house3.png" alt="house" width="50" height="50" align="right" />
+        </a>
+    </h1>
+
+    <div class="trigger">Rules</div>
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h5>
+                Rules:<br /><br />
+                The Mancala board is made up of two rows of 3 to 8 holes each.<br /><br />
+                3 to 8 pieces—seeds are placed in each hole.<br /><br />
+                Each player has a store (called a Mancala) at the sides of the Mancala board. <br />
+                The blue store belongs to player 1, and the purple store belongs to player 2.<br /><br />
+                The game begins with one player picking up all of the pieces
+                in any one of the holes on their side.<br /><br />
+                Moving clockwise, the player deposits one of the stones in each hole until the stones run out. <br /><br />
+                If you run into your own store, deposit one piece in it. If you run into your opponent's store, skip it.<br /><br />
+                If the last piece you drop is in your own store, you get a free turn.<br /><br />
+                If the last piece you drop is in an empty hole on your side, you capture that piece and any pieces in the hole directly opposite.<br /><br />
+                All captured pieces are placed in whoever's store that captured the pieces.<br /><br />
+                The game ends when all six spaces on one side of the Mancala board are empty.<br /><br />
+                The player who still has pieces on his side of the board when the game ends capture all of those pieces.<br /><br />
+            </h5>
+        </div>
+    </div>
+
+    <div style="text-align:center">
+        <p onclick="TurnComputer();">
+            Computer Turn
+        </p>
+    </div>
+    <h3 id="turns" style="color:mediumpurple; text-align:center">   </h3>
+    <div style="text-align:center">
+        <button onclick="BuildBoard(); style.display = 'none'">
+            Click here to begin the game!
+        </button>
+    </div>
+    <div id="Start" class="mancstart" style="color:mediumpurple;" text-align:center" onclick="BuildBoard();">
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <p id="End" style="text-align:center">
+
+    </p>
+    <script src="js/mancalajsite.js">
+
+    </script>
+
+</body>
+</html>
